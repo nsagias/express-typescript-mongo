@@ -1,8 +1,9 @@
-import mongoose from 'mongoose';
+import mongoose, { Document, Model, model, Types, Schema, Query } from "mongoose";
+
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
+    const conn = await mongoose.connect(process.env.MONGO_URI as string, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
     });
