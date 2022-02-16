@@ -20,10 +20,7 @@ app.get('/', (req: Request, res: Response) => {
 
 
 app.get('/products', (req: Request, res: Response) => {
-
-    res.json(products_2);
-
-
+  res.json(products_2);
 });
 
 
