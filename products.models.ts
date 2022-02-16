@@ -10,6 +10,10 @@ export interface IProduct {
   numReviews: number;
 }
 
+export interface IProduct2 extends IProduct {
+  image: string;
+}
+
 export interface IError {
   message: string;
 }
