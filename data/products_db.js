@@ -1,4 +1,4 @@
-const products = [
+const products_2 = [
   {
     _id: '1',
     name: 'Airpods Wireless Bluetooth Headphones',
