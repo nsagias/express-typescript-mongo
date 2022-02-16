@@ -1,16 +1,17 @@
 import * as dotenv from "dotenv";
 import express, { Request, Response} from "express";
+import connectDB from  "../config/db";
 import cors from "cors";
 import helmet from "helmet";
 import products_2 from "../data/products_2_db";
 import { IProduct, Product, Products } from "../products.models";
 
+dotenv.config();
 const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
-
-dotenv.config();
+connectDB();
 
 
 app.get('/', (req: Request, res: Response) => {
