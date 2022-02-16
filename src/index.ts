@@ -2,7 +2,7 @@ import * as dotenv from "dotenv";
 import express, { Request, Response} from "express";
 import cors from "cors";
 import helmet from "helmet";
-import products from "../products_db";
+import products from "../data/products_db";
 import { IProduct, Product, Products } from "../products.models";
 
 const app = express();
