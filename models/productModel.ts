@@ -6,24 +6,23 @@ import mongoose, {
   Schema, 
   Query, 
   ConnectOptions, 
-  mongo, 
-  SchemaTypeOptions } from "mongoose"
+  mongo,
+  SchemaOptions,
+  SchemaTypeOptions,
+  SchemaDefinitionProperty
+} from "mongoose"
 
-interface IUserSchema {
-  type: mongoose.Schema.Types.ObjectId;
-  required: number;
-  ref: string;
-}
+
 
 interface IProductSchema {
-  user: string;
-  name: string;
-  email: string;
-  isAdmin: boolean;
-
+  user?: Types.ObjectId;
+  name?: string;
+  email?: string;
+  isAdmin?: boolean;
+  
 }
 
-const productSchema: Schema = new mongoose.Schema<IProductSchema>({
+const productSchema: Schema = new Schema<IProductSchema>({
   user: { 
     type: mongoose.Schema.Types.ObjectId, 
     required: true,
@@ -37,5 +36,5 @@ const productSchema: Schema = new mongoose.Schema<IProductSchema>({
   timestamps: true
 });
 
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model<IProductSchema>('Product', productSchema);
 export default Product;
