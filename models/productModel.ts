@@ -1,15 +1,15 @@
 import mongoose, { 
-  Document, 
-  Model, 
-  model, 
+  // Document, 
+  // Model, 
+  // model, 
   Types, 
   Schema, 
-  Query, 
-  ConnectOptions, 
-  mongo,
-  SchemaOptions,
-  SchemaTypeOptions,
-  SchemaDefinitionProperty
+  // Query, 
+  // ConnectOptions, 
+  // mongo,
+  // SchemaOptions,
+  // SchemaTypeOptions,
+  // SchemaDefinitionProperty
 } from "mongoose"
 
 
