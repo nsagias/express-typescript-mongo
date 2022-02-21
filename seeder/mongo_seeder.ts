@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import users from "../data/users_db";
 import products from "../data/products_seeder";
-import User from "../models/userModel";
+import User, { IUserSchemaSeeder } from "../models/userModel";
 import Product from "../models/productModel";
 import connectDB from "../config/db";
 import { IProductBase } from "../products.models";
@@ -17,7 +17,7 @@ const importData = async () => {
     await Product.deleteMany();
 
     const createUsers = await User.insertMany(users);
-    const adminUser = createUsers[0]._id;
+    const adminUser: IUserSchemaSeeder = createUsers[0]._id;
 
     const sampleProducts = products.map((product: IProductBase) => {
       return { ...product, user: adminUser }
