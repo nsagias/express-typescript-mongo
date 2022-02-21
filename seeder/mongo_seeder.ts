@@ -20,10 +20,11 @@ const importData = async () => {
     const createUsers: IUserSchemaSeeder[] = await User.insertMany(users);
     const adminUser: IUserSchemaSeeder = createUsers[0]._id;
 
-    const sampleProducts: IProductBaseSeeder = products.map((product: IProductBase) => {
+    const sampleProducts: IProductBaseSeeder[] = products.map((product: IProductBase) => {
       return { ...product, user: adminUser }
     });
     
+    await Product.insertMany(sampleProducts);
   } catch (error) {
     
   };
