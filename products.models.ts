@@ -1,4 +1,4 @@
-import { IUserSchemaSeeder } from "./models/userModel";
+import { IUserSchemaSeeder } from "./user.models";
 
 export interface IProductBase {
   name: string;
