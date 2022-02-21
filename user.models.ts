@@ -1,16 +1,4 @@
-import mongoose, { 
-  // Document, 
-  // Model, 
-  // model, 
-  Types, 
-  Schema, 
-  // Query, 
-  // ConnectOptions, 
-  // mongo,
-  // SchemaOptions,
-  // SchemaTypeOptions,
-  // SchemaDefinitionProperty
-} from "mongoose";
+import mongoose, { Types,  Schema } from "mongoose";
 
 export interface IUserSchema {
   user?: Types.ObjectId;
