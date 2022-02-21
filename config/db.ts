@@ -2,11 +2,15 @@ import * as dotenv from "dotenv";
 import mongoose, { Document, Model, model, Types, Schema, Query, ConnectOptions } from "mongoose"
 
 dotenv.config();
-const MONGO_URI: string = process.env.MONGO_URI as string ;
+
+const MONGO_USER: string = process.env.MONGO_USER as string; 
+const MONGO_PASSWORD: string = process.env.MONGO_PASSWORD as string; 
+const MONGO_PATH: string = process.env.MONGO_PATH as string; 
+
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(MONGO_URI, <ConnectOptions>{
+    const conn = await mongoose.connect(`mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}${MONGO_PATH}`, <ConnectOptions>{
       useUnifiedTopology: true,
       useNewUrlParser: true,
     });
