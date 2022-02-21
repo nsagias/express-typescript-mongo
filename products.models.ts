@@ -1,5 +1,6 @@
 export interface IProductBase {
   name: string;
+  image: string;
   description: string;
   brand: string;
   category: string;
@@ -11,10 +12,6 @@ export interface IProductBase {
 
 export interface IProduct extends IProductBase{
   _id: string;
-}
-
-export interface IProduct2 extends IProduct {
-  image: string;
 }
 
 export interface IError {
