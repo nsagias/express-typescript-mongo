@@ -21,7 +21,13 @@ export interface IUserSchema {
   isAdmin?: boolean;
 }
 
+export interface IUserSchemaSeeder extends IUserSchema {
+  _id: mongoose.Types.ObjectId;
+}
+
+
 export interface IUserSchemaPassword extends IUserSchema {
+  _id: mongoose.Types.ObjectId;
   password: string;
 }
 
