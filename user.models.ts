@@ -19,7 +19,7 @@ export interface IUserSchema {
   isAdmin?: boolean;
 }
 
-export interface IUserSchemaSeeder extends IUserSchema {
+export interface IUserSchemaSeederItem extends IUserSchema {
   _id: mongoose.Types.ObjectId;
 }
 

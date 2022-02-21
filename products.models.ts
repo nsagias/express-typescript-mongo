@@ -1,4 +1,4 @@
-import { IUserSchemaSeeder } from "./user.models";
+import { IUserSchemaSeederItem } from "./user.models";
 
 export interface IProductBase {
   name: string;
@@ -13,7 +13,7 @@ export interface IProductBase {
 }
 
 export interface IProductBaseSeeder extends IProductBase {
-  user: IUserSchemaSeeder;
+  user: IUserSchemaSeederItem;
 }
 
 export interface IProduct extends IProductBase{
