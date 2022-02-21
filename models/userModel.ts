@@ -14,12 +14,15 @@ import mongoose, {
 
 
 
-interface IUserSchema {
+export interface IUserSchema {
   user?: Types.ObjectId;
   name?: string;
   email?: string;
   isAdmin?: boolean;
-  
+}
+
+export interface IUserSchemaPassword extends IUserSchema {
+  password: string;
 }
 
 const userSchema: Schema = new mongoose.Schema<IUserSchema>({
