@@ -16,7 +16,7 @@ const importData = async () => {
     await User.deleteMany();
     await Product.deleteMany();
 
-    const createUsers = await User.insertMany(users);
+    const createUsers: IUserSchemaSeeder[] = await User.insertMany(users);
     const adminUser: IUserSchemaSeeder = createUsers[0]._id;
 
     const sampleProducts = products.map((product: IProductBase) => {
