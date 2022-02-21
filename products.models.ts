@@ -1,5 +1,4 @@
-export interface IProduct {
-  _id: string;
+export interface IProductBase {
   name: string;
   description: string;
   brand: string;
@@ -8,6 +7,10 @@ export interface IProduct {
   countInStock: any;
   rating: number;
   numReviews: number;
+}
+
+export interface IProduct extends IProductBase{
+  _id: string;
 }
 
 export interface IProduct2 extends IProduct {
