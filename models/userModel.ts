@@ -1,7 +1,28 @@
-import mongoose, { Document, Model, model, Types, Schema, Query, ConnectOptions, mongo } from "mongoose"
+import mongoose, { 
+  // Document, 
+  // Model, 
+  // model, 
+  Types, 
+  Schema, 
+  // Query, 
+  // ConnectOptions, 
+  // mongo,
+  // SchemaOptions,
+  // SchemaTypeOptions,
+  // SchemaDefinitionProperty
+} from "mongoose";
 
 
-const userSchema: Schema = new mongoose.Schema({
+
+interface IUserSchema {
+  user?: Types.ObjectId;
+  name?: string;
+  email?: string;
+  isAdmin?: boolean;
+  
+}
+
+const userSchema: Schema = new mongoose.Schema<IUserSchema>({
   name: { type: String, required: true },
   email: { type: String, required: true , unique: true},
   isAdmin: { type: Boolean, required: true, default: false },
@@ -10,5 +31,7 @@ const userSchema: Schema = new mongoose.Schema({
   timestamps: true
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model<IUserSchema>('User', userSchema);
 export default User;
+
+
