@@ -1,3 +1,5 @@
+import { IUserSchemaSeeder } from "./models/userModel";
+
 export interface IProductBase {
   name: string;
   image: string;
@@ -8,6 +10,10 @@ export interface IProductBase {
   countInStock: any;
   rating: number;
   numReviews: number;
+}
+
+export interface IProductBaseSeeder extends IProductBase {
+  user: IUserSchemaSeeder;
 }
 
 export interface IProduct extends IProductBase{
