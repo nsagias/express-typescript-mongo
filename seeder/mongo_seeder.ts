@@ -2,9 +2,10 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import users from "../data/users_db";
 import products from "../data/products_seeder";
-import User, { IUserSchemaSeeder } from "../models/userModel";
+import User from "../models/userModel";
 import Product from "../models/productModel";
 import connectDB from "../config/db";
+import { IUserSchemaSeeder } from "../user.models";
 import { IProductBase, IProductBaseSeeder } from "../products.models";
 
 dotenv.config();
