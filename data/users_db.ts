@@ -1,3 +1,4 @@
+import bcrypt from 'bcryptjs';
 import { IUserSchemaPassword } from "../models/userModel";
 
 const users: IUserSchemaPassword[] = [
