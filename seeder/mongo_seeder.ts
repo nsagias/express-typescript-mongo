@@ -5,6 +5,7 @@ import products from "../data/products_seeder";
 import User from "../models/userModel";
 import Product from "../models/productModel";
 import connectDB from "../config/db";
+import { IProductBase } from "../products.models";
 
 dotenv.config();
 
@@ -17,6 +18,10 @@ const importData = async () => {
 
     const createUsers = await User.insertMany(users);
     const adminUser = createUsers[0]._id;
+
+    const sampleProducts = products.map((product: IProductBase) => {
+      return { ...product, user: adminUser }
+    });
     
   } catch (error) {
     
