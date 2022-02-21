@@ -12,8 +12,12 @@ export interface IProductBase {
   numReviews: number;
 }
 
-export interface IProductBaseSeeder extends IProductBase {
+export interface IProductBaseSeederItem extends IProductBase {
   user: IUserSchemaSeederItem;
+}
+
+export interface IProductBaseSeederList {
+  [index: number]: IProductBaseSeederItem; 
 }
 
 export interface IProduct extends IProductBase{
