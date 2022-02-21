@@ -1,6 +1,6 @@
+import { IUserSchemaPassword } from "../models/userModel";
 
-
-const users = [
+const users: IUserSchemaPassword[] = [
   {
     name: "Admin User",
     email: "admin@example.com",
